@@ -1,6 +1,6 @@
 # Angular Template Drive Forms
 
-This projet shows usage of Angular template driven approach of forms
+This project shows usage of Angular template driven approach of forms
 
 ## angular-ivy-zubjzs
 
