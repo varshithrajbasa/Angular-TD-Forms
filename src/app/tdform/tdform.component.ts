@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-tdform',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tdform.component.css']
 })
 export class TdformComponent implements OnInit {
+  @ViewChild('f') signUpForm: NgForm;
 
   constructor() { }
 
   ngOnInit() {
+
+  }
+  submitForm(){
+    console.log(this.signUpForm.value);
   }
 
 }
