@@ -8,7 +8,9 @@ import { NgForm } from '@angular/forms';
 })
 export class TdformComponent implements OnInit {
   @ViewChild('f') signUpForm: NgForm;
-
+  uname:String;
+  sec:String;
+  emailId:String;
   constructor() { }
 
   ngOnInit() {
@@ -16,6 +18,9 @@ export class TdformComponent implements OnInit {
   }
   submitForm(){
     console.log(this.signUpForm.value);
+    this.uname = this.signUpForm.value.username;
+    this.emailId = this.signUpForm.value.email;
+    this.sec = this.signUpForm.value.security;
   }
 
 }

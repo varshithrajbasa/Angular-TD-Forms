@@ -1,28 +1,69 @@
 <div class="m-2">
-  <form (ngSubmit)="submitForm()" #f>
-  <div class="mb-3 row">
-    <label for="inputname" class="col-sm-3 col-form-label">User Name</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="inputname" ngModel name="username" required #user="ngModel"/>
-      <span *ngIf="!user.valid && user.touched" class="err-msg">Please enter a valid User Name</span>
+  <form (ngSubmit)="submitForm()" #f="ngForm">
+    <div class="mb-3 row">
+      <label for="inputname" class="col-sm-3 col-form-label">User Name</label>
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          id="inputname"
+          ngModel
+          name="username"
+          required
+          #user="ngModel"
+        />
+        <span *ngIf="!user.valid && user.touched" class="err-msg"
+          >Please enter a valid User Name</span
+        >
+      </div>
     </div>
-  </div>
-  <div class="mb-3 row">
-    <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
-    <div class="col-sm-9">
-      <input type="email" class="form-control" id="inputEmail" ngModel name="email" required #email="ngModel"/>
-      <span *ngIf="!email.valid && email.touched" class="err-msg">Please enter a valid email</span>
+    <div class="mb-3 row">
+      <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+      <div class="col-sm-9">
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail"
+          ngModel
+          name="email"
+          required
+          #email="ngModel"
+        />
+        <span *ngIf="!email.valid && email.touched" class="err-msg"
+          >Please enter a valid email</span
+        >
+      </div>
     </div>
-  </div>
-  <div class="mb-3 row">
-    <label for="security" class="col-sm-3 col-form-label">Security Question</label>
-    <div class="col-sm-9">
-      <select class="form-control" id="security" required>
-        <option value="pet">Your First Pet?</option>
-        <option value="city">Your born city?</option>
-      </select>
+    <div class="mb-3 row">
+      <label for="security" class="col-sm-3 col-form-label"
+        >Security Question</label
+      >
+      <div class="col-sm-9">
+        <select class="form-control" id="security" required name="sec">
+          <option value="pet">Your First Pet?</option>
+          <option value="city">Your born city?</option>
+        </select>
+        <textarea
+          class="form-control mt-2"
+          col="3"
+          name="security"
+          ngModel
+          placeholder="Enter your answer..."
+          required
+          #security="ngModel"
+        ></textarea>
+        <span *ngIf="!security.valid && security.touched" class="err-msg"
+          >Please enter a valid Answer</span
+        >
+      </div>
     </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+      Submit
+    </button>
+  </form>
+  <div class="mb-3 row">
+    <div>{{ uname }}</div>
+    <div>{{ emailId }}</div>
+    <div>{{ sec }}</div>
   </div>
-  <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
-</form>
 </div>
