@@ -4,32 +4,27 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-tdform',
   templateUrl: './tdform.component.html',
-  styleUrls: ['./tdform.component.css']
+  styleUrls: ['./tdform.component.css'],
 })
 export class TdformComponent implements OnInit {
   @ViewChild('f') signUpForm: NgForm;
-  uname:String;
-  sec:String;
-  emailId:String;
-  constructor() { }
+  uname: String;
+  sec: String;
+  emailId: String;
+  constructor() {}
 
-  ngOnInit() {
-
-  }
-  submitForm(){
-    console.log(this.signUpForm.value);
+  ngOnInit() {}
+  submitForm() {
+    console.table(this.signUpForm.value);
     this.uname = this.signUpForm.value.username;
     this.emailId = this.signUpForm.value.email;
     this.sec = this.signUpForm.value.security;
   }
-  setDefault(){
-    this.signUpForm.form.patchValue(
-      {
-        "username": "test",
-        "email": "test@test.com",
-        "security": "test Answer"
-    }
-    )
+  setDefault() {
+    this.signUpForm.form.patchValue({
+      username: 'test',
+      email: 'test@test.com',
+      security: 'test Answer',
+    });
   }
-
 }
