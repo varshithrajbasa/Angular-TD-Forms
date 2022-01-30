@@ -57,9 +57,17 @@
         >
       </div>
     </div>
-    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+    <div class="d-flex">
+    <button class="btn btn-primary me-2" type="submit" [disabled]="!f.valid">
       Submit
     </button>
+    <button class="btn btn-primary me-2" (click)="setDefault()">
+      Set Default values
+    </button>
+    <button class="btn btn-primary me-2" type="reset">
+      Reset
+    </button>
+  </div>
   </form>
   <div class="mb-3 row">
     <div>{{ uname }}</div>

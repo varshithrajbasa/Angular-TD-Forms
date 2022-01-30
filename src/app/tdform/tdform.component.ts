@@ -22,5 +22,14 @@ export class TdformComponent implements OnInit {
     this.emailId = this.signUpForm.value.email;
     this.sec = this.signUpForm.value.security;
   }
+  setDefault(){
+    this.signUpForm.form.patchValue(
+      {
+        "username": "test",
+        "email": "test@test.com",
+        "security": "test Answer"
+    }
+    )
+  }
 
 }
