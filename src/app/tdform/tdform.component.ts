@@ -11,6 +11,8 @@ export class TdformComponent implements OnInit {
   uname: String;
   sec: String;
   emailId: String;
+  gender: String;
+  genders = ['male','female'];
   constructor() {}
 
   ngOnInit() {}
@@ -19,6 +21,7 @@ export class TdformComponent implements OnInit {
     this.uname = this.signUpForm.value.username;
     this.emailId = this.signUpForm.value.email;
     this.sec = this.signUpForm.value.security;
+    this.gender = this.signUpForm.value.gender;
   }
   setDefault() {
     this.signUpForm.form.patchValue({

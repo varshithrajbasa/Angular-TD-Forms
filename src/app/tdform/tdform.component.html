@@ -35,6 +35,22 @@
       </div>
     </div>
     <div class="mb-3 row">
+      <label class="col-sm-3 col-form-label">Gender</label>
+      <div>
+      <div class="col-sm-9 form-check" *ngFor="let gender of genders">
+      <input
+      type="radio"
+      class="form-check-input"
+      ngModel
+      name="gender"
+      [value]="gender"
+      [id]="gender"
+      required />
+      <label class="form-check-label" [for]="gender">{{gender}}</label>
+    </div>
+  </div>
+    </div>
+    <div class="mb-3 row">
       <label for="security" class="col-sm-3 col-form-label"
         >Security Question</label
       >
@@ -73,5 +89,6 @@
     <div>{{ uname }}</div>
     <div>{{ emailId }}</div>
     <div>{{ sec }}</div>
+    <div>{{ gender }}</div>
   </div>
 </div>
